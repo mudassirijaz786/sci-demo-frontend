@@ -133,46 +133,52 @@
                   </h3>
     
                   <div class="row">
-                    <div class="col-md-4 box">
+                    <div class="col-md-3 box">
                       <div class="heading">
-                        <p>Exams</p>
+                        <div class="row">
+                          <p class="col-md-6">Exams</p>
+                          <p class="col-md-6 master-right">+</p>
+                        </div>
                       </div>
     
-                      <div>
+                      <div class="b-l master-content ">
                         <p>M9</p>
                         <p>M5</p>
                         <p>M8</p>
-                        <p>HI</p>
+                        <p>HI</p> 
                         <p>BCP</p>
                         <p>PGI</p>
                         <p>ComGI</p>
                         <p>MBA</p>
                       </div>
                     </div>
+
+                    <div class="col-md-1 master-icon">
+                      <p>></p>
+                    </div>
     
-                    <div class="col-md-4 box">
+                    <div class="col-md-3 box">
                       <div class="heading">
-                        <p>Assignment</p>
+                        <p >Assignment</p>
                       </div>
     
-                      <div>
-                        <p>M9</p>
-                        <p>M5</p>
-                        <p>M8</p>
-                        <p>HI</p>
-                        <p>BCP</p>
-                        <p>PGI</p>
-                        <p>ComGI</p>
-                        <p>MBA</p>
+                      <div class="b-m master-content">
                       </div>
                     </div>
     
-                    <div class="col-md-4 box">
+                    <div class="col-md-1 master-icon">
+                      <p><</p>
+                    </div>
+
+                    <div class="col-md-3 box">
                       <div class="heading">
-                        <p>Rooms</p>
+                        <div class="row">
+                          <p class="col-md-6">Rooms</p>
+                          <p class="col-md-6 master-right">+</p>
+                        </div>
                       </div>
     
-                      <div>
+                      <div class="b-r master-content">
                         <p>Room1</p>
                         <p>Room2</p>
                         <p>Room3</p>
@@ -216,12 +222,40 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- Menu Toggle Script -->
     <script>
       $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+      });
+
+      $('.b-l p').on('click', function(){
+        let val = $(this).text();
+        if(!($('.b-m p').is('#'+val)) ){
+            if($('.b-l-p').length === 2){
+                alert('you can add max 2 record!');
+            }else{
+                $('.b-m').append('<p id="'+val+'" class="b-l-p">'+val+'</p>');
+            }
+        }else{
+            $('.b-m').children('#'+val).remove();
+        }
+      });
+      
+      $('.b-r p').on('click', function(){
+        let val = $(this).text();
+        if(!($('.b-m p').is('#'+val)) ){
+            if($('.b-m-p').length === 1){
+                alert('you can add max 1 record!');
+            }else{
+                $('.b-m').append('<p id="'+val+'" class="b-m-p" >'+val+'</p>');
+            }   
+        }else{
+            $('.b-m').children('#'+val).remove();
+        }
       });
     </script>
   </body>

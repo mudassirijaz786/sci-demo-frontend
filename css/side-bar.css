@@ -335,8 +335,8 @@ body {
 
 .master-schedule .heading {
   color: #003264;
-  margin-left: 5px;
   font-size: medium;
+  text-align: center;
   font-weight: 600;
 }
 
@@ -370,6 +370,21 @@ body {
   font-size: 14.5px;
 }
 
+.master-schedule p {
+  cursor: pointer;
+}
+
+.master-schedule p:hover {
+  cursor: pointer;
+  color: #003263;
+  background-color: lightgray;
+  border-radius: 6px;
+}
+
+.master-schedule p {
+  cursor: pointer;
+}
+
 .heading-first {
   color: gray;
   margin-left: 5px;
@@ -382,6 +397,20 @@ body {
   margin-left: 5px;
   font-size: medium;
   font-weight: 600;
+}
+
+.master-right {
+  color: #003264;
+}
+
+.master-content {
+  text-align: center;
+}
+
+.master-icon {
+  text-align: center;
+  vertical-align: bottom;
+  margin-top: 170px;
 }
 
 .master-schedule .button-submit {
