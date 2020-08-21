@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/side-bar.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <title>SCI</title>
+</head>
+
+<body class="body">
+    <div class="d-flex " id="wrapper">
+        <!-- Sidebar -->
+        <div class="" id="sidebar-wrapper">
+            <a class="action1" href="#"> </a>
+            <a class="action" href="{% url 'schedule:index' %}">
+                <i class="fa fa-home action-icon"></i>
+            </a>
+            <a class="action" href="#">
+                <i class="fa fa-pencil action-icon"></i>
+            </a>
+            <a class="action" href="#">
+                <i class="fa fa-paperclip action-icon"></i>
+            </a>
+            <a class="action" href="#">
+                <i class="fa fa-leanpub action-icon"></i>
+            </a>
+            <a class="action1" href="#"> </a>
+        </div>
+        <!-- Sidebar -->
+
+        <div id="page-content-wrapper">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!--  Show this only on mobile to medium screens  -->
+                <a class="navbar-brand d-lg-none" href="#">
+                    <img src="images/Logo.svg" alt="" height="70px" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <!--  Use flexbox utility classes to change how the child elements are justified  -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav"></ul>
+                    <!--   Show this only lg screens and up   -->
+                    <a class="navbar-brand d-none d-lg-block" href="{% url 'schedule:index' %}">
+                        <img src="images/Logo.svg" alt="" height="70px" />
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <form class="form-inline my-2 my-lg-0" action="{% url 'accounts:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="dropdown-item" type="submit">Logout</button>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <img src="images/user_avatar.png" alt="profile-img" class="profile-img" />
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- navbar -->
+
+            <!-- page body -->
+            <div class="container-fluid">
+                <!-- Master Schedule -->
+
+                <div class="row dashboard">
+                    <div class="col-lg-12 ">
+
+                        <div class="row">
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="count">
+
+                                    <div class="progress-left-side mx-auto mt-5" data-value='40'>
+                                        <span class="progress-left">
+                                            <span class="progress-bar border-primary"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                            <span class="progress-bar border-primary"></span>
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="">
+                                                <div class="h5 font-weight-bold ml-4">40 %</div>
+                                                <div class="h5 font-weight-bold ">Availible</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center mt-4">
+                                        <div class="col-6">
+                                            <div class="h4 fa fa-square mr-2" style=" color: #A3A1FB;">
+                                            </div><span class="small text-body ">Availible</span>
+                                        </div>
+                                        <div class="col-6" style=" color: gainsboro;">
+                                            <div class="h4 fa fa-square mr-2"></div><span class="small text-body">Not Availible</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="headings-left">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a>
+                                                    <i class="fa fa-list icon">
+                                                </i>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h5 class="heading">Adhoc Schedule</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="headings-left">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a>
+                                                    <i class="fa fa-clock-o icon">
+                                                </i>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h5 class="heading">Schedule</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="headings-left">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a>
+                                                    <i class="fa fa-calendar-minus-o icon">
+                                                </i>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h5 class="heading">Create Master Schedule</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="headings-left">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a>
+                                                    <i class="fa fa-calendar icon">
+                                                </i>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h5 class="heading">Master Schedule</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- header -->
+                                <div class="center-content ">
+                                    <div class="row    ">
+
+                                        <div class="col-md-7 col-sm-12">
+                                            <h5 class="font-weight-bold">Examination <span class="badge badge-pill badge-dark">12</span>
+                                            </h5>
+                                        </div>
+
+                                        <div class="col-md-5 col-sm-12 justify-content-center d-flex pl-5">
+
+                                            <span>
+                                                <a class="pr-2">
+                                                    <i class="fa fa-refresh" style="color: lightblue;">
+                                                    </i>
+                                                </a>
+                                            </span > Reload
+
+                                            <button class="view-by ml-3" style="font-size: small">View by 
+                                                    <a>
+                                                        <i class="fa fa-angle-down ">
+                                                        </i>
+                                                    </a>
+                                                </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- center content -->
+                                <div class="center-content ">
+                                    <div class="border-mar border-bottom-line ">
+                                        <h5>Exams</h5>
+                                    </div>
+                                    <div class="border-mar border-bottom-line ">
+                                        <h6>M9</h6>
+                                        <p class="capacity ">Capacity: 12</p>
+                                    </div>
+                                    <div class="border-mar border-bottom-line ">
+                                        <h6>M5</h6>
+                                        <p class="capacity ">Capacity: 15</p>
+                                    </div>
+                                    <div class="border-mar border-bottom-line ">
+                                        <h6>M9</h6>
+                                        <p class="capacity ">Capacity: 16</p>
+                                    </div>
+
+                                </div>
+
+                                <!-- bottom content -->
+                                <div>
+                                    <div class="center-content ">
+                                        <div class="row">
+                                            <div class="col-md-11">
+                                                <h5 class="font-weight-bold mt-2 ">Exams Status</h5>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a >
+                                                    <i class="fa fa-ellipsis-v" >
+                                                    </i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="progress mt-3 ">
+
+                                        <div class="progress-bar " role="progressbar " style="width: 20% " aria-valuenow="15 " aria-valuemin="0 " aria-valuemax="100 "></div>
+                                        <div class="progress-bar bg-danger " role="progressbar " style="width: 50% " aria-valuenow="30 " aria-valuemin="0 " aria-valuemax="100 "></div>
+                                    </div>
+
+
+                                    <div class="progress mt-3 ">
+                                        <div class="progress-bar " role="progressbar " style="width: 50% " aria-valuenow="15 " aria-valuemin="0 " aria-valuemax="100 "></div>
+                                        <div class="progress-bar bg-danger " role="progressbar " style="width: 20% " aria-valuenow="70 " aria-valuemin="0 " aria-valuemax="100 "></div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 ">
+
+                                <div class="upper ">
+
+                                    <div class="today ">
+
+                                        <div class=" d-flex ">
+                                            <h5 class="font-weight-bold mt-2 border-top-line ">Alerts <span class="badge badge-light badge-dark number-circle ">12</span></h5>
+                                        </div>
+
+                                        <h5 class="mt-4 ">Today <span>
+                                            <a>
+                                                <i class=" fa fa-angle-down ">
+                                                </i>
+                                            </a>
+                                        </span></h5>
+                                    </div>
+
+                                    <div class="d-flex ">
+                                        <div class="ml-2 mt-1 ">
+                                            <a class=" icon-exlamation ">
+                                                <i class="fa fa-exclamation " style="color: white ">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="ml-2 ">
+                                            <p class="font-weight-bold " style="font-size: smaller; ">Project Noname</p>
+                                            <p style="font-size: xx-small; margin-top: -10px " ">12 minutes ago</p>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class=" d-flex ">
+                                        <div class="ml-2 mt-1 ">
+                                            <a class=" icon-exlamation ">
+                                                <i class="fa fa-exclamation " style="color: white ">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="ml-2 ">
+                                            <p class="font-weight-bold " style="font-size: smaller; ">Income calculation</p>
+                                            <p style="font-size: xx-small; margin-top: -10px " ">12 minutes ago</p>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="d-flex ">
+                                        <div class="ml-2 mt-1 ">
+                                            <a class=" icon-exlamation ">
+                                                <i class="fa fa-exclamation " style="color: white ">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="ml-2 ">
+                                            <p class="font-weight-bold " style="font-size: smaller; ">New member </p>
+                                            <p style="font-size: xx-small; margin-top: -10px ">12 minutes ago</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="upper ">
+                                    <div class="header d-flex justify-content-around ">
+                                        <div>
+                                            <h5 class="font-weight-bold mt-2 ">Threshold</h5>
+                                        </div>
+                                        <h5 class="mt-2 ">order by <span>
+                                                <a>
+                                                    <i class=" fa fa-angle-down ">
+        
+                                                    </i>
+                                                </a>
+                                            </span></h5>
+                                    </div>
+
+
+
+                                    <div class="mt-4 ">
+
+                                        <div class="d-flex justify-content-around mt-2 ml-n5 ">
+
+                                            <div class="progress-right-side mt 2 " data-value='60'>
+                                                <span class="progress-left ">
+                                                    <span class="progress-bar border-primary "></span>
+                                                </span>
+                                                <span class="progress-right ">
+                                                    <span class="progress-bar border-primary "></span>
+                                                </span>
+                                                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center ">
+                                                    <div class="h5 font-weight-bold pt-1 ">60%</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ml-n5 ">
+                                                <p class="font-weight-bold mt-2 " style="font-size: smaller; ">Room 1</p>
+                                                <p style="font-size: xx-small; margin-top: -10px " ">60 %</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="d-flex justify-content-around mt-2 ml-n5 ">
+
+                                        <div class="progress-right-side " data-value='40'>
+                                            <span class="progress-left ">
+                                                    <span class="progress-bar border-primary "></span>
+                                            </span>
+                                            <span class="progress-right ">
+                                                    <span class="progress-bar border-primary "></span>
+                                            </span>
+                                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center ">
+                                                <div class="h5 font-weight-bold pt-1 ">40%</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ml-n5 ">
+                                            <p class="font-weight-bold mt-2 " style="font-size: smaller; ">Room 3</p>
+                                            <p style="font-size: xx-small; margin-top: -10px " ">40 %</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- page body -->
+            <!-- </div> -->
+        </div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js " integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin=" anonymous "></script>
+
+
+
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle ").click(function(e) {
+                e.preventDefault();
+                $("#wrapper ").toggleClass("toggled ");
+            });
+
+            // Progress bar
+            $(function() {
+
+                $(".progress-left-side ").each(function() {
+
+                    var value = $(this).attr('data-value');
+                    var left = $(this).find('.progress-left .progress-bar');
+                    var right = $(this).find('.progress-right .progress-bar');
+
+                    if (value > 0) {
+                        if (value <= 50) {
+                            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                        } else {
+                            right.css('transform', 'rotate(180deg)')
+                            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                        }
+                    }
+
+                })
+
+                function percentageToDegrees(percentage) {
+
+                    return percentage / 100 * 360
+
+                }
+
+            });
+
+            $(function() {
+
+                $(".progress-right-side ").each(function() {
+
+                    var value = $(this).attr('data-value');
+                    var left = $(this).find('.progress-left .progress-bar');
+                    var right = $(this).find('.progress-right .progress-bar');
+
+                    if (value > 0) {
+                        if (value <= 50) {
+                            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                        } else {
+                            right.css('transform', 'rotate(180deg)')
+                            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                        }
+                    }
+
+                })
+
+                function percentageToDegrees(percentage) {
+
+                    return percentage / 100 * 360
+
+                }
+
+            });
+        </script>
+</body>
+
+</html>

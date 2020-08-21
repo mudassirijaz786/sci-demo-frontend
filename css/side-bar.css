@@ -1,434 +1,713 @@
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  /* padding-top: 40px; */
-  /* padding-bottom: 40px; */
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    /* padding-top: 40px; */
+    /* padding-bottom: 40px; */
 }
 
 #wrapper {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 #sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -5.5rem;
-  -webkit-transition: margin 0.25s ease-out;
-  -moz-transition: margin 0.25s ease-out;
-  -o-transition: margin 0.25s ease-out;
-  transition: margin 0.25s ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 20px;
+    min-height: 100vh;
+    margin-left: -5.5rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
 }
 
 #sidebar-wrapper .list-group {
-  width: 5rem;
+    width: 5rem;
 }
 
 #sidebar-wrapper .action {
-  height: 50px;
-  width: 50px;
-  background-color: #003263;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
+    height: 50px;
+    width: 50px;
+    background-color: #003263;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 #sidebar-wrapper .action1 {
-  height: 35px;
-  width: 35px;
-  background-color: #fff;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+    height: 35px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #sidebar-wrapper .action .action-icon {
-  color: #fff;
-  font-size: 26px;
+    color: #fff;
+    font-size: 26px;
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
-  background-color: #f4f7fe;
+    min-width: 100vw;
+    background-color: #f4f7fe;
 }
 
 #page-content-wrapper .navbar {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .profile-img {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .navbar-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
 }
 
 @media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -5.5rem;
-  }
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -5.5rem;
+    }
 }
+
 
 /* Create Exam CSS */
 
 .form-create-exam {
-  width: 100%;
-  padding: 15px;
-  margin: 0 auto;
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .form-create-exam .form-ctrl {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px 0px;
-  font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 0px;
+    font-size: 16px;
 }
 
 .form-group {
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
 }
 
 .form-create-exam .form-ctrl:focus {
-  z-index: 2;
+    z-index: 2;
 }
 
-.form-create-exam input[type="text"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+.form-create-exam input[type='text'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
-.form-create-exam input[type="date"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+.form-create-exam input[type='date'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
-.form-create-exam input[type="time"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+.form-create-exam input[type='time'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
 .form-create-exam input::placeholder {
-  color: #95989a;
-  font-size: 14.5px;
+    color: #95989a;
+    font-size: 14.5px;
 }
 
 .heading-first {
-  color: gray;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: gray;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .heading-last {
-  color: #003264;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: #003264;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .form-create-exam .button-submit {
-  border-radius: 13px;
-  width: 100%;
-  height: 40px;
-  background-color: #003263;
-  border-color: #003263;
-  font-size: 16px;
-  max-width: 530px;
-  margin-top: 10px;
-  color: white;
-  padding: 5px;
+    border-radius: 13px;
+    width: 100%;
+    height: 40px;
+    background-color: #003263;
+    border-color: #003263;
+    font-size: 16px;
+    max-width: 530px;
+    margin-top: 10px;
+    color: white;
+    padding: 5px;
 }
+
 
 /* Create Room CSS */
 
 .form-create-room {
-  width: 100%;
-  max-width: 530px;
-  padding: 15px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .form-create-room .form-ctrl {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px 0px;
-  font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 0px;
+    font-size: 16px;
 }
 
 .form-group {
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
 }
 
 .form-create-room .form-ctrl:focus {
-  z-index: 2;
+    z-index: 2;
 }
-.form-create-room input[type="text"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+
+.form-create-room input[type='text'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
 .form-create-room input::placeholder {
-  color: #95989a;
-  font-size: 14.5px;
+    color: #95989a;
+    font-size: 14.5px;
 }
 
 .heading-first {
-  color: gray;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: gray;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .heading-last {
-  color: #003264;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: #003264;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .form-create-room .button-submit {
-  border-radius: 13px;
-  width: 100%;
-  height: 40px;
-  background-color: #003263;
-  border-color: #003263;
-  font-size: 16px;
-  max-width: 530px;
-  margin-top: 10px;
-  color: white;
-  padding: 5px;
+    border-radius: 13px;
+    width: 100%;
+    height: 40px;
+    background-color: #003263;
+    border-color: #003263;
+    font-size: 16px;
+    max-width: 530px;
+    margin-top: 10px;
+    color: white;
+    padding: 5px;
 }
+
 
 /* Create Schedule CSS */
 
 .form-create-schedule {
-  width: 100%;
-  max-width: 530px;
-  padding: 15px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .form-create-schedule .form-ctrl {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px 0px;
-  font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 0px;
+    font-size: 16px;
 }
 
 .form-group {
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
 }
 
 .form-create-schedule .form-ctrl:focus {
-  z-index: 2;
+    z-index: 2;
 }
 
-.form-create-schedule input[type="text"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+.form-create-schedule input[type='text'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
-.form-create-schedule input[type="date"] {
-  border-radius: 13px;
-  border-color: #f5f5f5;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  padding: 20px;
+.form-create-schedule input[type='date'] {
+    border-radius: 13px;
+    border-color: #f5f5f5;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 20px;
 }
 
 .form-create-schedule input::placeholder {
-  color: #95989a;
-  font-size: 14.5px;
+    color: #95989a;
+    font-size: 14.5px;
 }
 
 .heading-first {
-  color: gray;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: gray;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .heading-last {
-  color: #003264;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: #003264;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .form-create-schedule .button-submit {
-  border-radius: 13px;
-  width: 100%;
-  height: 40px;
-  background-color: #003263;
-  border-color: #003263;
-  font-size: 16px;
-  max-width: 530px;
-  margin-top: 10px;
-  color: white;
-  padding: 5px;
+    border-radius: 13px;
+    width: 100%;
+    height: 40px;
+    background-color: #003263;
+    border-color: #003263;
+    font-size: 16px;
+    max-width: 530px;
+    margin-top: 10px;
+    color: white;
+    padding: 5px;
 }
+
 
 /* Master Schedule */
 
 .master-schedule {
-  width: 100%;
-  padding: 15px;
-  max-width: 700px;
-  margin: 0 auto;
+    width: 100%;
+    padding: 15px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .master-schedule .box {
-  box-sizing: border-box;
-  background-color: white;
-  padding: 0px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 0px;
 }
 
 .master-schedule .heading {
-  color: #003264;
-  font-size: medium;
-  text-align: center;
-  font-weight: 600;
+    color: #003264;
+    font-size: medium;
+    text-align: center;
+    font-weight: 600;
 }
 
 .master-schedule .form-ctrl:focus {
-  z-index: 2;
+    z-index: 2;
 }
 
-.master-schedule input[type="text"] {
-  border-radius: 13px;
-  border-color: transparent;
-  height: 40px;
-  padding-left: 5px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+.master-schedule input[type='text'] {
+    border-radius: 13px;
+    border-color: transparent;
+    height: 40px;
+    padding-left: 5px;
+    background: #ffffff 0% 0% no-repeat padding-box;
 }
 
 .master-schedule input::placeholder {
-  color: #95989a;
-  font-size: 14.5px;
+    color: #95989a;
+    font-size: 14.5px;
 }
 
 .master-schedule p {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .master-schedule p:hover {
-  cursor: pointer;
-  color: #003263;
-  background-color: lightgray;
-  border-radius: 0px;
+    cursor: pointer;
+    color: #003263;
+    background-color: lightgray;
+    border-radius: 0px;
 }
 
 .master-schedule p {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .heading-first {
-  color: gray;
-  align-items: center;
-  font-size: medium;
-  font-weight: 600;
+    color: gray;
+    align-items: center;
+    font-size: medium;
+    font-weight: 600;
 }
 
-.heading-first input[type="text"] {
-  align-items: center;
-  font-size: medium;
-  margin-left: 125px;
-  font-weight: 600;
+.heading-first input[type='text'] {
+    align-items: center;
+    font-size: medium;
+    margin-left: 125px;
+    font-weight: 600;
 }
 
 .heading-second {
-  color: #003264;
-  margin-left: 5px;
-  font-size: medium;
-  font-weight: 600;
+    color: #003264;
+    margin-left: 5px;
+    font-size: medium;
+    font-weight: 600;
 }
 
 .master-right {
-  color: #003264;
+    color: #003264;
 }
 
 .master-content {
-  text-align: center;
+    text-align: center;
 }
 
 .master-icon {
-  text-align: center;
-  vertical-align: bottom;
-  margin-top: 170px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-top: 170px;
 }
 
 .master-schedule .button-submit {
-  border-radius: 13px;
-  width: 100%;
-  height: 40px;
-  background-color: #003263;
-  border-color: #003263;
-  font-size: 16px;
-  max-width: 530px;
-  margin-top: 10px;
-  color: white;
-  padding: 5px;
+    border-radius: 13px;
+    width: 100%;
+    height: 40px;
+    background-color: #003263;
+    border-color: #003263;
+    font-size: 16px;
+    max-width: 530px;
+    margin-top: 10px;
+    color: white;
+    padding: 5px;
 }
 
 .center-input {
-  text-align: center;
-  width: 100%;
-  border: transparent;
+    text-align: center;
+    width: 100%;
+    border: transparent;
 }
 
 .center-input:focus {
-  text-align: center;
-  width: 100%;
-  border: transparent;
+    text-align: center;
+    width: 100%;
+    border: transparent;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.dashboard .count {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 15px;
+}
+
+.dashboard .headings-left {
+    border-radius: 10px;
+    padding-top: 10px;
+    color: dimgray;
+    display: flex;
+    color: #003264;
+    height: 60px;
+    font-size: small;
+    background-color: white;
+    margin-top: 10px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+.dashboard .headings-left .icon {
+    margin-left: 30px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard .headings-left .heading {
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.view-by {
+    border-radius: 20px;
+    height: 23px;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+.dashboard .center-content {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.dashboard .border-bottom-line {
+    border-bottom: 1px solid #ccc;
+}
+
+.dashboard .upper {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.margin-c {
+    margin-left: -30px;
+    margin-bottom: -10px;
+}
+
+.capacity {
+    color: green;
+}
+
+.number-circle {
+    width: 30px;
+    height: 30px;
+    padding-top: 9px;
+    padding-right: 8px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13.9px;
+}
+
+.margin-t {
+    margin-left: -30px;
+}
+
+.border-mar {
+    margin-bottom: 10px;
+}
+
+.icon-exlamation {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 36%;
+    display: inline-block;
+    padding-left: 9px;
+}
+
+.today {
+    margin-left: 10px;
+}
+
+
+/* Dashboard => Progress Bar Left*/
+
+.progress-left-side {
+    width: 150px;
+    height: 150px;
+    background: none;
+    position: relative;
+}
+
+.progress-left-side::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-left-side>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress-left-side .progress-left {
+    left: 0;
+}
+
+.progress-left-side .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress-left-side .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress-left-side .progress-right {
+    right: 0;
+}
+
+.progress-left-side .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.progress-left-side .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rounded-lg {
+    border-radius: 1rem;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+div.h4 {
+    line-height: 1rem;
+}
+
+
+/* Dashboard => Progress Bar Right*/
+
+.progress-right-side {
+    width: 60px;
+    height: 60px;
+    background: none;
+    position: relative;
+}
+
+.progress-right-side::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-right-side>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress-right-side .progress-left {
+    left: 0;
+}
+
+.progress-right-side .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress-right-side .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress-right-side .progress-right {
+    right: 0;
+}
+
+.progress-right-side .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.progress-right-side .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rounded-lg {
+    border-radius: 1rem;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+div.h4 {
+    line-height: 3rem;
 }
