@@ -94,10 +94,12 @@ body {
     #sidebar-wrapper {
         margin-left: 0;
     }
+
     #page-content-wrapper {
         min-width: 0;
         width: 100%;
     }
+
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -5.5rem;
     }
@@ -449,6 +451,7 @@ body {
     box-sizing: border-box;
     background-color: white;
     padding: 15px;
+    border-radius: 20px;
 }
 
 .dashboard .headings-left {
@@ -463,6 +466,7 @@ body {
     margin-top: 10px;
     flex-direction: row;
     align-items: center;
+    border-radius: 20px;
     text-align: center;
     font-weight: 600;
 }
@@ -491,6 +495,8 @@ body {
     background-color: white;
     padding: 15px;
     margin-bottom: 15px;
+    border-radius: 20px;
+
 }
 
 .dashboard .border-bottom-line {
@@ -502,6 +508,7 @@ body {
     background-color: white;
     padding: 15px;
     margin-bottom: 15px;
+    border-radius: 20px;
 }
 
 .margin-c {
@@ -511,6 +518,7 @@ body {
 
 .capacity {
     color: green;
+    font-size: 10px
 }
 
 .number-circle {
@@ -710,4 +718,37 @@ div.h4 {
 
 div.h4 {
     line-height: 3rem;
+}
+
+/* Verticle progress bar */
+
+.progress-bar-vertical {
+    width: 7px;
+    min-height: 130px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.progress-bar-vertical .progress-bar {
+    width: 100%;
+    height: 0;
+    -webkit-transition: height 0.6s ease;
+    -o-transition: height 0.6s ease;
+    transition: height 0.6s ease;
+}
+
+.progress-bar {
+    justify-content: normal !important;
+}
+
+.spanning {
+    text-align: center;
+    font-size: 10px
+}
+
+/* Circle border coloring  */
+
+.border-primary {
+    border-color: #A3A1FB !important;
 }
