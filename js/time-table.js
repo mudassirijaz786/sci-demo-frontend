@@ -72,7 +72,36 @@ function init_calendar(date) {
     }
     // Append the last row and set the current year
     calendar_days.append(row);
-    $(".year").text(year);
+    console.log(month);
+    var month_eng = ""
+    if (month === 0) {
+        month_eng = "January"
+    } else if (month === 1) {
+        month_eng = "Februrary"
+    } else if (month === 2) {
+        month_eng = "March"
+    } else if (month === 3) {
+        month_eng = "April"
+    } else if (month === 4) {
+        month_eng = "May"
+    } else if (month === 5) {
+        month_eng = "June"
+    } else if (month === 6) {
+        month_eng = "July"
+    } else if (month === 7) {
+        month_eng = "August"
+    } else if (month === 8) {
+        month_eng = "September"
+    } else if (month === 9) {
+        month_eng = "October"
+    } else if (month === 10) {
+        month_eng = "November"
+    } else if (month === 11) {
+        month_eng = "December"
+    }
+
+    $(".year").text(`${month_eng}, ${year}`);
+
 }
 
 // Get the number of days in a given month/year
@@ -122,6 +151,8 @@ function prev_year(event) {
     date.setFullYear(new_year);
     init_calendar(date);
 }
+
+// Below functions are useful for making hands on event using date selection and scheduler
 
 // Event handler for clicking the new event button
 function new_event(event) {
@@ -231,86 +262,12 @@ var event_data = {
     "events": [{
             "occasion": " Repeated Test Event ",
             "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
+            "year": 2020,
+            "month": 7,
+            "day": 23,
+            "cancelled": false
         },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10,
-            "cancelled": true
-        },
-        {
-            "occasion": " Repeated Test Event ",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 10
-        },
-        {
-            "occasion": " Test Event",
-            "invited_count": 120,
-            "year": 2017,
-            "month": 5,
-            "day": 11
-        }
+
     ]
 };
 

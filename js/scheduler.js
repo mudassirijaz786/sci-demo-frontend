@@ -746,7 +746,7 @@
             tm = options.theme ? 'ui' : 'fc';
             var sections = options.header;
             if (sections) {
-                element = $("<table class='fc-header' style='width:100%'/>")
+                element = $("<table class='fc-header' style='width:104%'/>")
                     .append(
                         $("<tr/>")
                         .append(renderSection('left'))
@@ -774,7 +774,7 @@
                     var prevButton;
                     $.each(this.split(','), function (j, buttonName) {
                         if (buttonName == 'title') {
-                            e.append("<span class='fc-header-title'><h2>&nbsp;</h2></span>");
+                            e.append("<span class='fc-header-title'><h3>&nbsp;</h3></span>");
                             if (prevButton) {
                                 prevButton.addClass(tm + '-corner-right');
                             }
@@ -848,7 +848,7 @@
 
 
         function updateTitle(html) {
-            element.find('h2')
+            element.find('h3')
                 .html(html);
         }
 

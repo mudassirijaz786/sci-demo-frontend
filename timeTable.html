@@ -10,12 +10,29 @@
     <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet">
     </link>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.5.1.js "
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin=" anonymous "></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
         rel="stylesheet" />
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
 
     <!-- Dialog Box-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -104,156 +121,165 @@
             <!-- page body -->
             <div class="container-fluid">
                 <!-- Master Schedule -->
-
                 <div class="row time-table">
-                    <div class="col-md-12">
+                    <div class="col-md-8" id='calendar'>
+                        <div style='clear:both'></div>
+                    </div>
 
-                        <div class="row">
+                    <div class="div col md-1"
+                        style="background-color: white; border-top-right-radius: 8px; margin-top: -3px; padding-top: 22px;">
+                        <a type="button" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa fa-pencil icons-edit " aria-hidden="true"></i>
+                        </a>
+                        <a>
+                            <i class="fa fa-plus ml-2 icons-add " aria-hidden="true"></i>
+                        </a>
 
-                            <div class="scheduler">
-                                <div class="col-md-9  ml-n5">
-                                    <div id='calendar'></div>
-                                    <div style='clear:both'></div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="div col-md-4">
+                            <div class="calendar-container">
+                                <div class="year-header d-flex align-items-center">
+                                    <span class="year" id="label">
+                                    </span>
+                                    <div id="left-right">
+                                        <span class="left-button" id="prev">
+                                            <a>
+                                                <i class="fa fa-angle-left" style="font-size: 20px"
+                                                    aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                        <span class="right-button" id="next">
+                                            <a>
+                                                <i class="fa fa-angle-right" style="font-size: 20px"
+                                                    aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <table class="months-table">
+                                    <!-- Months row in calender -->
+                                    <!-- <tbody>
+                                                <tr class="months-row">
+                                                    <td class="month">Jan</td>
+                                                    <td class="month">Feb</td>
+                                                    <td class="month">Mar</td>
+                                                    <td class="month">Apr</td>
+                                                    <td class="month">May</td>
+                                                    <td class="month">Jun</td>
+                                                    <td class="month">Jul</td>
+                                                    <td class="month">Aug</td>
+                                                    <td class="month">Sep</td>
+                                                    <td class="month">Oct</td>
+                                                    <td class="month">Nov</td>
+                                                    <td class="month">Dec</td>
+                                                </tr>
+                                            </tbody> -->
+                                </table>
+                                <table class="days-table">
+                                    <td class="day">Sun</td>
+                                    <td class="day">Mon</td>
+                                    <td class="day">Tue</td>
+                                    <td class="day">Wed</td>
+                                    <td class="day">Thu</td>
+                                    <td class="day">Fri</td>
+                                    <td class="day">Sat</td>
+                                </table>
+                                <div class="frame">
+                                    <table class="dates-table">
+                                        <tbody class="tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="progress-conent ">
+                                <div class=" d-flex justify-content-around mt-5">
+                                    <div>
+                                        <h5 class="font-weight-bold mt-2" style="font-size: 17px;">Threshold</h5>
+                                    </div>
+                                    <h5 class="mt-2">order by <span>
+                                            <a>
+                                                <i class=" fa fa-angle-down ">
+
+                                                </i>
+                                            </a>
+                                        </span></h5>
+                                </div>
+
+                                <div class="mt-4 ">
+                                    <div class="d-flex justify-content-around mt-5 ml-n5 ">
+                                        <div class="progress-right-side  " data-value='60'>
+                                            <span class="progress-left ">
+                                                <span class="progress-bar border-primary "></span>
+                                            </span>
+                                            <span class="progress-right ">
+                                                <span class="progress-bar border-primary "></span>
+                                            </span>
+                                            <div
+                                                class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center ">
+                                                <div class="h5 font-weight-bold pt-1 ">60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-n5 ">
+                                            <p class="font-weight-bold " style="font-size: medium; ">Room 1
+                                            </p>
+                                            <p style="font-size:small;  " ">60 %</p>
+                                    </div>
 
                                 </div>
-                                <div class="col-md-3">
 
-                                    <div class="upper">
-                                        <div class="calendar-container">
-                                            <div class="year-header">
-                                                <span class="left-button" id="prev">
-                                                    < </span> <span class="year" id="label">
-                                                </span>
-                                                <span class="right-button" id="next"> > </span>
-                                            </div>
-                                            <table class="months-table" style="width:290px;">
-                                                <tbody>
-                                                    <tr class="months-row">
-                                                        <td class="month">Jan</td>
-                                                        <td class="month">Feb</td>
-                                                        <td class="month">Mar</td>
-                                                        <td class="month">Apr</td>
-                                                        <td class="month">May</td>
-                                                        <td class="month">Jun</td>
-                                                        <td class="month">Jul</td>
-                                                        <td class="month">Aug</td>
-                                                        <td class="month">Sep</td>
-                                                        <td class="month">Oct</td>
-                                                        <td class="month">Nov</td>
-                                                        <td class="month">Dec</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <table class="days-table">
-                                                <td class="day">Sun</td>
-                                                <td class="day">Mon</td>
-                                                <td class="day">Tue</td>
-                                                <td class="day">Wed</td>
-                                                <td class="day">Thu</td>
-                                                <td class="day">Fri</td>
-                                                <td class="day">Sat</td>
-                                            </table>
-                                            <div class="frame">
-                                                <table class="dates-table">
-                                                    <tbody class="tbody">
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                <div class=" d-flex justify-content-around mt-5 ml-n5 ">
+                                    <div class=" progress-right-side " data-value='40'>
+                                        <span class=" progress-left ">
+                                                <span class=" progress-bar border-primary "></span>
+                                        </span>
+                                        <span class=" progress-right ">
+                                                <span class=" progress-bar border-primary "></span>
+                                        </span>
+                                        <div class=" progress-value w-100 h-100 rounded-circle d-flex
+                                                align-items-center justify-content-center ">
+                                            <div class=" h5 font-weight-bold pt-1 ">40%</div>
                                         </div>
                                     </div>
 
-
-                                    <div class="upper ">
-                                        <div class=" d-flex justify-content-around ">
-                                            <div>
-                                                <h5 class="font-weight-bold mt-2 ">Threshold</h5>
-                                            </div>
-                                            <h5 class="mt-2 ">order by <span>
-                                                    <a>
-                                                        <i class=" fa fa-angle-down ">
-
-                                                        </i>
-                                                    </a>
-                                                </span></h5>
+                                    <div class=" ml-n5 ">
+                                        <p class=" font-weight-bold mt-2 " style=" font-size: medium; ">Room 3</p>
+                                        <p style=" font-size: small " ">40 %</p>
                                         </div>
 
-
-
-                                        <div class="mt-4 ">
-
-                                            <div class="d-flex justify-content-around mt-4 ml-n5 ">
-
-                                                <div class="progress-right-side  " data-value='60'>
-                                                    <span class="progress-left ">
-                                                        <span class="progress-bar border-primary "></span>
-                                                    </span>
-                                                    <span class="progress-right ">
-                                                        <span class="progress-bar border-primary "></span>
-                                                    </span>
-                                                    <div
-                                                        class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center ">
-                                                        <div class="h5 font-weight-bold pt-1 ">60%</div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="ml-n5 ">
-                                                    <p class="font-weight-bold mt-2 " style="font-size: smaller; ">Room
-                                                        1
-                                                    </p>
-                                                    <p style="font-size: xx-small; margin-top: -10px " ">60 %</p>
-                                        </div>
-
-                                    </div>
-
-                                    <div class=" d-flex justify-content-around mt-2 ml-n5 ">
-
-                                        <div class=" progress-right-side " data-value='40'>
-                                            <span class=" progress-left ">
-                                                    <span class=" progress-bar border-primary "></span>
-                                            </span>
-                                            <span class=" progress-right ">
-                                                    <span class=" progress-bar border-primary "></span>
-                                            </span>
-                                            <div class=" progress-value w-100 h-100 rounded-circle d-flex
-                                                        align-items-center justify-content-center ">
-                                                <div class=" h5 font-weight-bold pt-1 ">40%</div>
-                                            </div>
-                                        </div>
-
-                                        <div class=" ml-n5 ">
-                                            <p class=" font-weight-bold mt-2 " style=" font-size: smaller; ">Room 3</p>
-                                            <p style=" font-size: xx-small; margin-top: -10px " ">40 %</p>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
                                     </div>
 
                                 </div>
                             </div>
-
-
-
-
-
-
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-
-
             </div>
         </div>
-
-    </div>
-    <!-- page body -->
-    <!-- </div> -->
+        <!-- page body -->
     </div>
 
 
@@ -312,9 +338,9 @@
 
             var calendar = $('#calendar').fullCalendar({
                 header: {
-                    left: 'prev,next today',
+                    left: 'prev, next, today',
                     center: 'title',
-                    right: 'agendaDay,month, edit, add'
+                    right: 'agendaDay, month, edit, add'
                 },
                 editable: true,
                 firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
@@ -336,7 +362,7 @@
                 allDaySlot: false,
                 selectHelper: true,
                 select: function (start, end, allDay) {
-                    var title = prompt('Event Title:');
+                    var title = "Your event here"
                     if (title) {
                         calendar.fullCalendar('renderEvent', {
                                 title: title,
@@ -375,50 +401,12 @@
                 },
 
                 events: [{
-                        title: 'All Day Event',
-                        start: new Date(y, m, 1)
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: new Date(y, m, d - 3, 16, 0),
-                        allDay: false,
-                        className: 'info'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: new Date(y, m, d + 4, 16, 0),
-                        allDay: false,
-                        className: 'info'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: new Date(y, m, d, 10, 30),
-                        allDay: false,
-                        className: 'important'
-                    },
-                    {
-                        title: 'Lunch',
-                        start: new Date(y, m, d, 12, 0),
-                        end: new Date(y, m, d, 14, 0),
-                        allDay: false,
-                        className: 'important'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: new Date(y, m, d + 1, 19, 0),
-                        end: new Date(y, m, d + 1, 22, 30),
-                        allDay: false,
-                    },
-                    {
-                        title: 'Click for Google',
-                        start: new Date(y, m, 28),
-                        end: new Date(y, m, 29),
-                        url: 'http://google.com/',
-                        className: 'success'
-                    }
-                ],
+                    id: 999,
+                    title: 'Event Name',
+                    start: new Date(y, m, d - 3, 16, 0),
+                    allDay: false,
+                    className: 'danger'
+                }, ],
             });
 
 
@@ -482,45 +470,13 @@
 
         });
     </script>
+
+
     <style>
         body {
             text-align: center;
             font-size: 14px;
             font-family: "Helvetica Nueue", Arial, Verdana, sans-serif;
-        }
-
-        #external-events {
-            float: left;
-            width: 150px;
-            padding: 0 10px;
-            text-align: left;
-        }
-
-        #external-events h4 {
-            font-size: 12px;
-            margin-top: 0;
-            padding-top: 1em;
-        }
-
-        .external-event {
-            /* try to mimick the look of a real event */
-            margin: 10px 0;
-            padding: 2px 4px;
-            background: #3366CC;
-            color: #fff;
-            font-size: .85em;
-            cursor: pointer;
-        }
-
-        #external-events p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
-
-        #external-events p input {
-            margin: 0;
-            vertical-align: middle;
         }
 
         #calendar {
