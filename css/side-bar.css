@@ -1806,3 +1806,16 @@ table.fc-header {
   max-width: 530px;
   color: #95989a;
 }
+
+.button-create-schedule {
+  border-radius: 13px;
+  width: 15%;
+  height: 40px;
+  background-color: #eb4040;
+  border-color: transparent;
+  font-size: 16px;
+  max-width: 530px;
+  margin-top: 10px;
+  color: white;
+  padding: 5px;
+}
