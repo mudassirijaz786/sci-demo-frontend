@@ -128,35 +128,345 @@
 
                     <div class="div col md-1"
                         style="background-color: white; border-top-right-radius: 8px; margin-top: -3px; padding-top: 22px;">
-                        <a type="button" data-toggle="modal" data-target="#exampleModal">
+                        <a type="button" data-toggle="modal" data-target="#editModal">
                             <i class="fa fa-pencil icons-edit " aria-hidden="true"></i>
                         </a>
-                        <a>
+                        <a type="button" data-toggle="modal" data-target="#addModal">
                             <i class="fa fa-plus ml-2 icons-add " aria-hidden="true"></i>
                         </a>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        <!-- Modal edit-->
+                        <div class="modal" id="editModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
+                            <div class="modal-dialog modal-dialog-centered " role="document" >
+                                <div class="modal-content" style="background-color: white;">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <h5 class="modal-title heading-last" id="exampleModalLongTitle">Edit Adhoc Schedule</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <div class="modal-timetable ">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-12 ">
+                                                        <div class="form-group form-ctrl" style="width: 100%;"> 
+                                                        <input
+                                                            style="width: 96%; margin-left: 10px"
+                                                            type="text"
+                                                            class="form-control"
+                                                            onfocus="(this.type='date')"
+                                                            id="date"
+                                                            placeholder="Date"
+                                                        />
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12 d-flex justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="exam"
+                                                                    placeholder="Exam"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='date')"
+                                                                    id="certification-date"
+                                                                    placeholder="Certification Date"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12 d-flex justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='date')"
+                                                                    id="registration-date"
+                                                                    placeholder="Registration Date"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='date')"
+                                                                    id="result-date"
+                                                                    placeholder="Result Date"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12 d-flex justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="room"
+                                                                    placeholder="Room"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='date')"
+                                                                    id="seats"
+                                                                    placeholder="Seats"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12 d-flex justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='time')"
+                                                                    id="start-time"
+                                                                    placeholder="Start time"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='time')"
+                                                                    id="end-time"
+                                                                    placeholder="End Time"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12 d-flex justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='time')"
+                                                                    id="break-start-time"
+                                                                    placeholder="Break start time"
+                                                                />
+                                                                </div>
+                                                        </div>
+    
+                                                        <div class="col-md-6">
+                                                            <div class="form-group form-ctrl">
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    onfocus="(this.type='time')"
+                                                                    id="break-end-time"
+                                                                    placeholder="Break end time"
+                                                                />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                    
+                                                    <div class="col-md-12 text-center">
+                                                        <button type="submit" class="button-submit">
+                                                        Submit
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                          </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Modal add -->
+
+                        <div class="modal" id="addModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered " role="document" >
+                            <div class="modal-content" style="background-color: white;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title heading-last" id="exampleModalLongTitle">Create Adhoc Schedule</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-timetable ">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-12 ">
+                                                    <div class="form-group form-ctrl" style="width: 100%;"> 
+                                                    <input
+                                                        style="width: 96%; margin-left: 10px"
+                                                        type="text"
+                                                        class="form-control"
+                                                        onfocus="(this.type='date')"
+                                                        id="date"
+                                                        placeholder="Date"
+                                                    />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="exam"
+                                                                placeholder="Exam"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='date')"
+                                                                id="certification-date"
+                                                                placeholder="Certification Date"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='date')"
+                                                                id="registration-date"
+                                                                placeholder="Registration Date"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='date')"
+                                                                id="result-date"
+                                                                placeholder="Result Date"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="room"
+                                                                placeholder="Room"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='date')"
+                                                                id="seats"
+                                                                placeholder="Seats"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='time')"
+                                                                id="start-time"
+                                                                placeholder="Start time"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='time')"
+                                                                id="end-time"
+                                                                placeholder="End Time"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='time')"
+                                                                id="break-start-time"
+                                                                placeholder="Break start time"
+                                                            />
+                                                            </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-ctrl">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                onfocus="(this.type='time')"
+                                                                id="break-end-time"
+                                                                placeholder="Break end time"
+                                                            />
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="col-md-12 text-center">
+                                                    <button type="submit" class="button-submit">
+                                                    Submit
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div class="col-md-3">
                         <div class="div col-md-4">
