@@ -1819,3 +1819,29 @@ table.fc-header {
   color: white;
   padding: 5px;
 }
+
+.ms-button-submit-blue {
+  border-radius: 13px;
+  width: 15%;
+  height: 40px;
+  background-color: #003263;
+  border-color: transparent;
+  font-size: 16px;
+  max-width: 530px;
+  margin-top: 10px;
+  color: white;
+  padding: 5px;
+}
+
+.ms-button-submit-red {
+  border-radius: 13px;
+  width: 15%;
+  height: 40px;
+  background-color: #eb4040;
+  border-color: transparent;
+  font-size: 16px;
+  max-width: 530px;
+  margin-top: 10px;
+  color: white;
+  padding: 5px;
+}
