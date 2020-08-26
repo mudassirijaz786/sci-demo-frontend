@@ -810,7 +810,7 @@ div.h4 {
 }
 
 #left-right {
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .left-button,
@@ -1218,7 +1218,33 @@ fc-button-today {
 .fc-button-month.fc-state-default {
   min-width: 67px;
   margin-right: 0px;
+  color: black;
   text-align: center;
+  border-top-left-radius: 0%;
+  border-color: #003263;
+  border-bottom-left-radius: 0%;
+  background-color: transparent;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+
+.fc-button-agendaDay.fc-state-default {
+  min-width: 67px;
+  margin-right: -11px;
+  text-align: center;
+  border-color: #003263;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  background-color: #003263;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+
+.fc-button-month.fc-state-default:hover {
+  min-width: 67px;
+  margin-right: 0px;
+  text-align: center;
+  color: white;
   border-top-left-radius: 0%;
   border-bottom-left-radius: 0%;
   background-color: #003263;
@@ -1226,14 +1252,15 @@ fc-button-today {
   -webkit-transition: all 0.2s;
 }
 
-.fc-button-agendaDay.fc-state-default {
+.fc-button-agendaDay.fc-state-default:hover {
   min-width: 67px;
-  margin-right: 0px;
+  margin-right: -11px;
   text-align: center;
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
-  background-color: #003263;
+  background-color: transparent;
   transition: all 0.2s;
+  color: black;
   -webkit-transition: all 0.2s;
 }
 
