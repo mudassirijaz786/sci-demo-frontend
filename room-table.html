@@ -175,14 +175,60 @@
             "
           >
             <div class="col-md-10">
-              <h2 class="heading-first">
-                Room 1
-                <span>
-                  <a type="button" data-toggle="modal" data-target="#editModal">
-                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                  </a>
-                </span>
-              </h2>
+              <div class="input-group-btn">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle heading-first"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  id="deviceSelector"
+                  style="
+                    background-color: transparent;
+                    color: gray;
+                    border-radius: 0px;
+                    border-color: transparent;
+                  "
+                >
+                  Rooms
+                  <span>
+                    <a
+                      type="button"
+                      data-toggle="modal"
+                      data-target="#editModal"
+                    >
+                      <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a
+                    class="dropdown-item"
+                    href="javascript:void(0)"
+                    onclick="searchTableDevice(this.innerHTML)"
+                    >M8</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="javascript:void(0)"
+                    onclick="searchTableDevice(this.innerHTML)"
+                    >CO</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="javascript:void(0)"
+                    onclick="searchTableDevice(this.innerHTML)"
+                    >HCI</a
+                  >
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a
+                    class="dropdown-item"
+                    href="javascript:void(0)"
+                    onclick="searchTableDevice('all')"
+                    >All</a
+                  >
+                </div>
+              </div>
             </div>
 
             <div class="col-md-2">
@@ -209,49 +255,61 @@
 
           <div class="row d-flex justify-content-around">
             <div class="col-md-12">
-              <table class="table" style="background-color: white">
-                <thead>
-                  <tr>
-                    <th scope="col">Record ID</th>
-                    <th scope="col">Exam Code</th>
-                    <th scope="col">Exam Mode</th>
-                    <th scope="col">Exam Medium</th>
-                    <th scope="col">Exam Schedule</th>
-                    <th scope="col">Session ID</th>
-                    <th scope="col">Company ID</th>
-                    <th scope="col">Registration</th>
-                  </tr>
-                </thead>
+              <table id="table" class="table" style="background-color: white">
+                <tr class="header">
+                  <th scope="col">Record ID</th>
+                  <th scope="col">Exam Code</th>
+                  <th scope="col">Exam Mode</th>
+                  <th scope="col">Exam Medium</th>
+                  <th scope="col">Exam Schedule</th>
+                  <th scope="col">Session ID</th>
+                  <th scope="col">Company ID</th>
+                  <th scope="col">Registration</th>
+                </tr>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>M9</td>
+                    <td>1</td>
+                    <td>M8</td>
                     <td>Annual</td>
-                    <td>Urdu</td>
-                    <td>Mon to Fri</td>
-                    <td>42346</td>
-                    <td>678393</td>
-                    <td>Mon to Fri</td>
+                    <td>English</td>
+                    <td>03/12/2020</td>
+
+                    <td>39233</td>
+                    <td>COM1033</td>
+                    <td>Annual</td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>M3</td>
+                    <td>2</td>
+                    <td>M9</td>
                     <td>Monthly</td>
                     <td>Urdu</td>
-                    <td>Mon to Wed</td>
-                    <td>42346</td>
-                    <td>678393</td>
-                    <td>Mon to Fri</td>
+                    <td>01/12/2020</td>
+
+                    <td>4321</td>
+                    <td>COM1013</td>
+                    <td>Monthly</td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
+                    <td>3</td>
                     <td>HCI</td>
-                    <td>Annual</td>
+                    <td>Weekly</td>
                     <td>Spanish</td>
-                    <td>Mon to Tue</td>
-                    <td>42346</td>
-                    <td>678393</td>
-                    <td>Mon to Fri</td>
+                    <td>03/02/2020</td>
+
+                    <td>392333</td>
+                    <td>COM133033</td>
+                    <td>Annual</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>CO</td>
+                    <td>Daily</td>
+                    <td>English</td>
+                    <td>03/12/2020</td>
+
+                    <td>39233</td>
+                    <td>COM103332</td>
+                    <td>Annual</td>
                   </tr>
                 </tbody>
               </table>
@@ -294,6 +352,57 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
       });
+
+      $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          });
+        });
+      });
+
+      $(function () {
+        $("#search").on("input", function () {
+          searchRow();
+        });
+      });
+
+      function searchRow() {
+        var $rows = $("#table > tbody > tr").not(".header");
+        var val1 = $.trim($("#search").val()).replace(/ +/g, " ").toLowerCase();
+        var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
+        val2 = val2 === "devices" ? "" : val2;
+
+        $rows
+          .show()
+          .filter(function () {
+            var text1 = $(this)
+              .find("td:nth-child(1)")
+              .text()
+              .replace(/\s+/g, " ")
+              .toLowerCase();
+            var text2 = $(this)
+              .find("td:nth-child(2)")
+              .text()
+              .replace(/\s+/g, " ")
+              .toLowerCase();
+            return !~text1.indexOf(val1) || !~text2.indexOf(val2);
+          })
+          .hide();
+      }
+
+      function searchTableDevice(device) {
+        var filter, table, tr, td, i;
+
+        $("#deviceSelector").html(device);
+
+        if (device == "all") {
+          $("#deviceSelector").html("Devices");
+        }
+
+        searchRow();
+      }
     </script>
   </body>
 </html>
